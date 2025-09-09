@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite",
+        "serve": "concurrently \"php artisan serve --host=0.0.0.0 --port=8000\" \"npm run tunnel\"",
+        "serve:local": "php artisan serve --host=0.0.0.0 --port=8000",
+        "tunnel": "node scripts/ngrok-tunnel.js",
+        "tunnel:setup": "node scripts/ngrok-setup.js",
+        "tunnel:status": "node scripts/ngrok-setup.js status",
+        "tunnel:stop": "node scripts/ngrok-setup.js stop"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.0.0",
+        "axios": "^1.11.0",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^2.0.0",
+        "ngrok": "^5.0.0-beta.2",
+        "tailwindcss": "^4.0.0",
+        "vite": "^7.0.4"
+    },
+    "dependencies": {
+        "lenis": "^1.3.11"
+    }
+}

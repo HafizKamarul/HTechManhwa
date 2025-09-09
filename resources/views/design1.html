@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTech Manhwa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-roboto { font-family: 'Roboto', sans-serif; }
+        .purple-glow-text { text-shadow: 0 0 10px #a855f7, 0 0 20px #a855f7; }
+        .holographic-card {
+            background: rgba(30, 20, 50, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+        }
+        .holographic-card:hover {
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+            transform: translateY(-5px);
+        }
+        .chapter-list li:hover {
+            background: rgba(168, 85, 247, 0.1);
+            border-left: 3px solid #a855f7;
+        }
+        .reader-controls button:hover {
+            background: rgba(168, 85, 247, 0.2);
+        }
+        #vanta-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-roboto">
+    <div id="vanta-bg"></div>
+    
+    <!-- Navigation -->
+    <nav class="border-b border-purple-500/20 bg-gray-900/80 backdrop-blur-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <span class="font-orbitron text-2xl purple-glow-text">HTECH<span class="text-purple-400">MANHWA</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-purple-400 bg-gray-800">Home</a>
+                        <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-purple-400">Library</a>
+                        <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-purple-400">Genres</a>
+                        <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-purple-400">Updates</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full text-gray-300 hover:text-purple-400 hover:bg-gray-800">
+                        <i data-feather="search"></i>
+                    </button>
+                    <button class="p-2 rounded-full text-gray-300 hover:text-purple-400 hover:bg-gray-800">
+                        <i data-feather="user"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl font-bold font-orbitron purple-glow-text mb-6">READ <span class="text-purple-400">MANHWA</span> IN STYLE</h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">Immerse yourself in an elegant reading experience with our modern manhwa platform.</p>
+                <div class="flex justify-center space-x-4">
+                    <button class="px-8 py-3 bg-purple-500 hover:bg-purple-600 text-white font-bold rounded-lg transition-all transform hover:scale-105">
+                        Start Reading
+                    </button>
+                    <button class="px-8 py-3 border border-purple-400 text-purple-400 hover:bg-purple-400/10 font-bold rounded-lg transition-all transform hover:scale-105">
+                        Explore Library
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Manhwa -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold font-orbitron mb-12 text-center purple-glow-text" data-aos="fade-up">FEATURED <span class="text-purple-400">TITLES</span></h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Manhwa Card 1 -->
+                <div class="holographic-card rounded-xl overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="http://static.photos/technology/640x360/1" alt="Solo Leveling" class="w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 bg-purple-500/90 text-white px-2 py-1 rounded text-xs font-bold">NEW</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Solo Leveling</h3>
+                        <div class="flex items-center text-sm text-gray-400 mb-3">
+                            <span>Action</span>
+                            <span class="mx-2">•</span>
+                            <span>Adventure</span>
+                        </div>
+                        <p class="text-sm text-gray-300 line-clamp-2">In a world where hunters battle monsters, Sung Jin-Woo starts as the weakest but gains incredible powers.</p>
+                        <button class="w-full mt-4 py-2 bg-purple-500 hover:bg-purple-600 text-white font-medium rounded transition-all">
+                            Read Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Manhwa Card 2 -->
+                <div class="holographic-card rounded-xl overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <img src="http://static.photos/technology/640x360/2" alt="Tower of God" class="w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 bg-pink-500/90 text-white px-2 py-1 rounded text-xs font-bold">POPULAR</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Tower of God</h3>
+                        <div class="flex items-center text-sm text-gray-400 mb-3">
+                            <span>Fantasy</span>
+                            <span class="mx-2">•</span>
+                            <span>Adventure</span>
+                        </div>
+                        <p class="text-sm text-gray-300 line-clamp-2">Bam enters the mysterious Tower to find his friend Rachel, facing deadly challenges and powerful foes.</p>
+                        <button class="w-full mt-4 py-2 bg-purple-500 hover:bg-purple-600 text-white font-medium rounded transition-all">
+                            Read Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Manhwa Card 3 -->
+                <div class="holographic-card rounded-xl overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative">
+                        <img src="http://static.photos/technology/640x360/3" alt="The Beginning After The End" class="w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 bg-indigo-500/90 text-white px-2 py-1 rounded text-xs font-bold">TRENDING</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">The Beginning After The End</h3>
+                        <div class="flex items-center text-sm text-gray-400 mb-3">
+                            <span>Fantasy</span>
+                            <span class="mx-2">•</span>
+                            <span>Isekai</span>
+                        </div>
+                        <p class="text-sm text-gray-300 line-clamp-2">A king is reincarnated in a magical world with all his memories, starting his journey anew.</p>
+                        <button class="w-full mt-4 py-2 bg-purple-500 hover:bg-purple-600 text-white font-medium rounded transition-all">
+                            Read Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Manhwa Card 4 -->
+                <div class="holographic-card rounded-xl overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative">
+                        <img src="http://static.photos/technology/640x360/4" alt="Omniscient Reader" class="w-full h-64 object-cover">
+                        <div class="absolute top-2 right-2 bg-violet-500/90 text-white px-2 py-1 rounded text-xs font-bold">HOT</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Omniscient Reader</h3>
+                        <div class="flex items-center text-sm text-gray-400 mb-3">
+                            <span>Action</span>
+                            <span class="mx-2">•</span>
+                            <span>Apocalypse</span>
+                        </div>
+                        <p class="text-sm text-gray-300 line-clamp-2">When the world turns into a novel he read, Kim Dokja uses his knowledge to survive the scenarios.</p>
+                        <button class="w-full mt-4 py-2 bg-purple-500 hover:bg-purple-600 text-white font-medium rounded transition-all">
+                            Read Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reading Experience -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900/50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-12" data-aos="fade-right">
+                    <h2 class="text-3xl font-bold font-orbitron mb-6 purple-glow-text">PREMIUM <span class="text-purple-400">READER</span></h2>
+                    <p class="text-gray-300 mb-6">Experience manhwa like never before with our premium reader technology. Adjust brightness, contrast, and reading preferences with simple controls.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i data-feather="zap" class="text-purple-400 mr-3 mt-1"></i>
+                            <span class="text-gray-300">Instant chapter loading with no delays</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="eye" class="text-purple-400 mr-3 mt-1"></i>
+                            <span class="text-gray-300">Eye-comfort mode for long reading sessions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="download" class="text-purple-400 mr-3 mt-1"></i>
+                            <span class="text-gray-300">Offline reading available</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="holographic-card rounded-xl overflow-hidden p-2">
+                        <div class="relative">
+                            <img src="http://static.photos/technology/640x360/5" alt="Reading Interface" class="w-full rounded-lg">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <button class="p-4 bg-purple-500/80 rounded-full hover:bg-purple-600 transition-all transform hover:scale-110">
+                                    <i data-feather="play" class="w-8 h-8"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-orbitron text-xl purple-glow-text mb-4">HTECH<span class="text-purple-400">MANHWA</span></h3>
+                    <p class="text-gray-400">The future of manhwa reading is here. Experience stories like never before.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-300 mb-4">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400">Popular</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400">New Releases</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400">Genres</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400">Authors</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-300 mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-400">DMCA</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-300 mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-purple-400">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-purple-400">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-purple-400">
+                            <i data-feather="discord"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-purple-400">
+                            <i data-feather="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2025 HTech Manhwa. All rights reserved. All manhwa are property of their respective owners.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        VANTA.GLOBE({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0xa855f7,
+            backgroundColor: 0x1a0a2e,
+            size: 0.8
+        });
+        
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        feather.replace();
+    </script>
+</body>
+</html>
